@@ -2,7 +2,7 @@ import request from 'supertest';
 import { app } from '../../app';
 
 describe('testing analyze route', () => {
-	it('should send status code of 400 if missing text', async () => {
+	it('should send status code of 400 if missing text body property', async () => {
 		return request(app).post('/analyze').send({}).expect(400);
 	});
 
@@ -20,19 +20,19 @@ describe('testing analyze route', () => {
 		expect(response.body.textLength.hasOwnProperty('withSpaces')).toBe(true);
 		expect(response.body.textLength.hasOwnProperty('withoutSpaces')).toBe(true);
 	});
-});
 
-it('should send proper response if text is empty string', async () => {
-	const expectedResult = {
-		textLength: {
-			withSpaces: 0,
-			withoutSpaces: 0
-		},
-		wordCount: 0,
-		characterCount: []
-	};
+	it('should send proper response if text is an empty string', async () => {
+		const expectedResult = {
+			textLength: {
+				withSpaces: 0,
+				withoutSpaces: 0
+			},
+			wordCount: 0,
+			characterCount: []
+		};
 
-	const response = await request(app).post('/analyze').send({ text: '' });
+		const response = await request(app).post('/analyze').send({ text: '' });
 
-	expect(response.body).toEqual(expectedResult);
+		expect(response.body).toEqual(expectedResult);
+	});
 });
