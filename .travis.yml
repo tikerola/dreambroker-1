@@ -1,5 +1,9 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 script:
-  - "npm run test"
+- npm run test
+deploy:
+  provider: heroku
+  api_key:
+    secure: xDXtZC2uh+amHiPRJsSkBfhohbKwy89++IUXQHvH8DG3IF8jvgHDHSXclsMqPLfyNr21V/83d8VnGQM1vTr95rRn0Eqblp9D5C2yaSprgqP/MLgvV/VvOCYF6sUhudpbSKsPkSiDoMY1y1T70ks0oVKiJzRkrhvSFlDA1QGaJubF1BL5wt1CAXbLLOphe4kf0w53btW41LhUAYY9o8sM/zw+okMoYAPObzu0NMoQCNQNPrgZBOirayusdZzt/ZLFoiWsogLODow4xsaUfXdFHuafJWgT10n+Vy37fQMTmPDpAvCoJo9Hh7wVuZyLL0/4OZ9UskoPqr2iaK2Jko+NWRzUiIL8rCkg9sk/5aSjMg6mn5pdcOyG5h556oX0NOwvwL14UT0y87DzpvnbOKAA8kuz4s64TpsSFnGZe1VqxQhrMuWn5jFCMqFxN//ifkod7Oz3DlYI7tIzxAPrjiMkpSH/VXylvq6n5NDKSGCquE1NOqFUwiFljTQ+KjtHY8QEZy3PR3ZhWq0C2Nvsy7wTnw4mvimHdoYe3gRxGqmJnbuWgCUfnaWXiXQ8qB045Gzw31Y1Bu29YJuMkZE70bD/gqPCDsQ63R8ppdtv65E6H/+3n34PWfFKmhn8LB64jNyVLIyJQ380qDf+U5UngA8SgoGD3JwMiEMZWEzGXiYHmjY=
