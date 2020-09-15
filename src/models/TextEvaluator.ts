@@ -40,7 +40,8 @@ export class TextEvaluator {
 		// Let's construct frequency object --> { a: 3, d: 7, ...}
 
 		for (let letter of text) {
-			if (letter.match(/[a-zA-Z]/)) letterFrequencyObject[letter] = (letterFrequencyObject[letter] || 0) + 1;
+			letter = letter.toLowerCase();
+			if (letter.match(/[a-z]/)) letterFrequencyObject[letter] = (letterFrequencyObject[letter] || 0) + 1;
 		}
 
 		// Let's go through the object and make an array of object properties and values

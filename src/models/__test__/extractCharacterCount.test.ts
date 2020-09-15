@@ -7,18 +7,7 @@ it('should extract characters and sort the response array by object keys', () =>
 	expect(TextEvaluator.extractCharacterCount(text1)).toEqual(expectedResult1);
 
 	const text2 = 'HelLo 2 tiMEs  ';
-	const expectedResult2 = [
-		{ E: 1 },
-		{ H: 1 },
-		{ L: 1 },
-		{ M: 1 },
-		{ e: 1 },
-		{ i: 1 },
-		{ l: 1 },
-		{ o: 1 },
-		{ s: 1 },
-		{ t: 1 }
-	];
+	const expectedResult2 = [ { e: 2 }, { h: 1 }, { i: 1 }, { l: 2 }, { m: 1 }, { o: 1 }, { s: 1 }, { t: 1 } ];
 
 	expect(TextEvaluator.extractCharacterCount(text2)).toEqual(expectedResult2);
 

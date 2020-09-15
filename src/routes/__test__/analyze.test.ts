@@ -21,3 +21,18 @@ describe('testing analyze route', () => {
 		expect(response.body.textLength.hasOwnProperty('withoutSpaces')).toBe(true);
 	});
 });
+
+it('should send proper response if text is empty string', async () => {
+	const expectedResult = {
+		textLength: {
+			withSpaces: 0,
+			withoutSpaces: 0
+		},
+		wordCount: 0,
+		characterCount: []
+	};
+
+	const response = await request(app).post('/analyze').send({ text: '' });
+
+	expect(response.body).toEqual(expectedResult);
+});
